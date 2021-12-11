@@ -33,7 +33,7 @@ bool ModuleAudio1::Init()
 //	{
 //		// LOG("An error has ocurred while opening the audio has ocurred: %s", SDL_GetError())
 //	}
-	if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1 ) {
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096) == -1 ) {
 		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
 					 "Couldn't open mixer: %s", SDL_GetError());
 		return 2;
