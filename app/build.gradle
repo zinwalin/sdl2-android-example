@@ -46,26 +46,26 @@ apply plugin: 'kotlin-android-extensions'
         productFlavors {
             flavorDimensions 'abi'
             
-            arm {
-                ndk {
-                    abiFilter 'armeabi-v7a'
-                }
-            }
+//            arm {
+//                ndk {
+//                    abiFilter 'armeabi-v7a'
+//                }
+//            }
             arm64 {
                 ndk {
                     abiFilter 'arm64-v8a'
                 }
             }
-            x86 {
-                ndk {
-                    abiFilter 'x86'
-                }
-            }
-            x86_64 {
-                ndk {
-                    abiFilter 'x86_64'
-                }
-            }
+//            x86 {
+//                ndk {
+//                    abiFilter 'x86'
+//                }
+//            }
+//            x86_64 {
+//                ndk {
+//                    abiFilter 'x86_64'
+//                }
+//            }
             all_in_one {
                 ndk {
                     //abiFilter 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
