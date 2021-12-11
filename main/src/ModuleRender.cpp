@@ -3,7 +3,7 @@
 #include "ModuleRender.h"
 #include "ModuleWindow.h"
 #include "ModuleTextures.h"
-//#include "SDL/include/SDL.h"
+//#include "SDL.h"
 
 #include "SDL.h"
 #include "SDL_ttf.h"

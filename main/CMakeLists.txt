@@ -22,36 +22,82 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../SDL2_mixer/ ${CMAKE_CURRENT_SOUR
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../SDL2_ttf/ ${CMAKE_CURRENT_SOURCE_DIR}/../SDL2_ttf)
 
 add_library(
-             main-lib
+        main-lib
 
-             SHARED
+        SHARED
 
-             # Provides a relative path to your source file(s).
-             src/Globals.cpp
-             src/Application.cpp
-             src/ModuleWindow.cpp
-             src/ModuleRender.cpp
-             src/ModuleTextures.cpp
-             src/ModuleAudio_1.cpp
-             src/SDL_android_main.c
-             src/main.cpp )
+        # Provides a relative path to your source file(s).
+        src/BlueUp.cpp
+        src/Box_Medal.cpp
+        src/Box_PowerUp.cpp
+        src/Enemy.cpp
+        src/Enemy_Bonus_Ship.cpp
+        src/Enemy_Boss_Cannon.cpp
+        src/Enemy_Boss_Left_Wing.cpp
+        src/Enemy_Boss_Main.cpp
+        src/Enemy_Boss_Right_Wing.cpp
+        src/Enemy_Grey_Tank.cpp
+        src/Enemy_Kamikaze.cpp
+        src/Enemy_Light_Shooter.cpp
+        src/Enemy_Light_Shooter_Kamikaze.cpp
+        src/Enemy_Long_Megatank.cpp
+        src/Enemy_Medium_Shooter.cpp
+        src/Enemy_Megatank.cpp
+        src/Enemy_Mine.cpp
+        src/Enemy_Ship.cpp
+        src/Enemy_Ship_Tank.cpp
+        src/Enemy_Train_Coach.cpp
+        src/Enemy_Train_Locomotive.cpp
+        src/Medals.cpp
+        src/MissileUp.cpp
+        src/ModuleAudio_2.cpp
+        src/ModuleCollision.cpp
+        src/ModuleEnemies.cpp
+        src/ModuleFadeToBlack.cpp
+        src/ModuleGroundEnemies.cpp
+        src/ModuleGroundExplosion.cpp
+        src/ModuleMap1.cpp
+        src/ModuleMap2.cpp
+        src/ModuleParticles.cpp
+        src/ModulePlayer.cpp
+        src/ModulePlayer2.cpp
+        src/ModulePowerUps.cpp
+        src/ModuleShadows.cpp
+        src/ModuleStageClear1.cpp
+        src/ModuleWelcomeScreen.cpp
+        src/Player.cpp
+        src/PowerUp.cpp
+        src/RedUp.cpp
+        src/Tank.cpp
+        src/Turret.cpp
+        src/log.cpp
+        src/Globals.cpp
+        src/ModuleTextures.cpp
+        src/main.cpp
+        src/ModuleWindow.cpp
+        src/ModuleAudio_1.cpp
+        src/ModuleRender.cpp
+        src/ModuleFonts.cpp
+        src/Application.cpp
+        src/ModuleInput.cpp
+        src/SDL_android_main.c )
 
 
 find_library( # Sets the name of the path variable.
-              log-lib
+        log-lib
 
-              # Specifies the name of the NDK library that
-              # you want CMake to locate.
-              log )
+        # Specifies the name of the NDK library that
+        # you want CMake to locate.
+        log )
 
 
 
 target_link_libraries( # Specifies the target library.
-                        main-lib
-                        SDL2
-                        SDL2_image
-                        SDL2_gfx
-                        SDL2_mixer
-                        SDL2_ttf
+        main-lib
+        SDL2
+        SDL2_image
+        SDL2_gfx
+        SDL2_mixer
+        SDL2_ttf
 
-                        ${log-lib} )
+        ${log-lib} )

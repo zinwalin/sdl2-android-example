@@ -17,13 +17,15 @@ public:
 	~ModuleAudio1();
 
 	bool Init();
-	Mix_Music* const Load(const char* path);
+//	Mix_Music* const Load(const char* path);
+	Mix_Chunk* const Load(const char* path);
 	update_status Update();
 	bool CleanUp();
 	bool Close();
 
 public:
-	Mix_Music* music;
+//	Mix_Music* music;
+	Mix_Chunk* music;
 	bool playing = false;
 };
 
