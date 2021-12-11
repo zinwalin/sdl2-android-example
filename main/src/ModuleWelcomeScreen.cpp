@@ -96,7 +96,8 @@ update_status ModuleWelcomeScreen::Update()
 		App->map_1->setup = true;
 		setdown = false;
 	}
-	if (App->input->keyboard[SDL_SCANCODE_1])
+	// 按1进入单人游戏，手机上同时使用空格来开始游戏
+	if (App->input->keyboard[SDL_SCANCODE_1] || App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
 		
 		App->player2->deadplayer = true;

@@ -276,7 +276,8 @@ update_status ModuleInput::Update()
 		}
 	}
 
-	if (keyboard[SDL_SCANCODE_ESCAPE])
+	// 游戏退出 quit game / stop game
+	if (keyboard[SDL_SCANCODE_ESCAPE] || keyboard[SDL_SCANCODE_AC_BACK])
 	{
 		return update_status::UPDATE_STOP;
 	}
