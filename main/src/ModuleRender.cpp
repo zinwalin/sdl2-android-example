@@ -97,7 +97,8 @@ update_status ModuleRender::PostUpdate()
 //    SDL_Texture* solidTexture = SDL_CreateTextureFromSurface(renderer, solid);
 //    SDL_RenderCopy(renderer, solidTexture, NULL, &dstrect);
 //    SDL_FreeSurface(solid);
-//	SDL_RenderPresent(App->render->renderer);
+
+	SDL_RenderPresent(App->render->renderer);
 
 	return update_status::UPDATE_CONTINUE;
 }
