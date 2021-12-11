@@ -27,6 +27,12 @@ add_library(
              SHARED
 
              # Provides a relative path to your source file(s).
+             src/Globals.cpp
+             src/Application.cpp
+             src/ModuleWindow.cpp
+             src/ModuleRender.cpp
+             src/ModuleTextures.cpp
+             src/ModuleAudio_1.cpp
              src/SDL_android_main.c
              src/main.cpp )
 
