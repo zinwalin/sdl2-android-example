@@ -213,7 +213,7 @@ enum main_states
 
 Application* App = nullptr;
 
-int main(int argc, char* argv[])
+int SDL_main(int argc, char* argv[])
 {
 //    ReportMemoryLeaks();
 

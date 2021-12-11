@@ -45,7 +45,17 @@ bool ModuleWindow::Init()
 		if(WIN_FULLSCREEN_DESKTOP == true)
 			flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
 
-		window = SDL_CreateWindow("", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
+//		window = SDL_CreateWindow("", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
+
+		// Create an application window with the following settings:
+		window = SDL_CreateWindow(
+				"An SDL2 window",                  // window title
+				SDL_WINDOWPOS_UNDEFINED,           // initial x position
+				SDL_WINDOWPOS_UNDEFINED,           // initial y position
+				width,                               // width, in pixels
+				height,                               // height, in pixels
+				SDL_WINDOW_OPENGL                  // flags - see below
+		);
 
 		if(window == NULL)
 		{
@@ -54,8 +64,8 @@ bool ModuleWindow::Init()
 		}
 		else
 		{
-			//Get window surface
-			screen_surface = SDL_GetWindowSurface(window);
+//			//Get window surface
+//			screen_surface = SDL_GetWindowSurface(window);  // 这句话会导致后面的renderer生成失败， 可能是SDL2在windows的调用方式。
 		}
 	}
 

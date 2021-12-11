@@ -1,9 +1,9 @@
 #include "Globals.h"
-//#include "Application.h"
+#include "Application.h"
 #include "ModuleAudio_1.h"
 //#include "ModuleAudio_2.h"
 //#include "ModuleMap1.h"
-//#include "ModuleRender.h"
+#include "ModuleRender.h"
 #include "SDL.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -32,7 +32,7 @@ bool ModuleAudio1::Init()
 	{
 		LOG("An error has ocurred while opening the audio has ocurred: %s", SDL_GetError())
 	}
-	ModuleAudio1::Load("Assets/Sound effects/Boss song.ogg");
+	ModuleAudio1::Load("Sound effects/Boss song.ogg");
 
 	
 	return true;
@@ -40,19 +40,19 @@ bool ModuleAudio1::Init()
 update_status ModuleAudio1::Update()
 {
 	
-//	if (App->render->camera.y < -12000 && playing == false)
-//	{
-//		if (Mix_PlayMusic(music, -1) == -1)
-//		{
-//			LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
-//		}
-//		playing = true;
-//	}
-//
-//	if (App->render->camera.y > -12000 && playing == true)
-//	{
-//		playing = false;
-//	}
+	if (App->render->camera.y < -12000 && playing == false)
+	{
+		if (Mix_PlayMusic(music, -1) == -1)
+		{
+			// LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
+		}
+		playing = true;
+	}
+
+	if (App->render->camera.y > -12000 && playing == true)
+	{
+		playing = false;
+	}
 
 	return UPDATE_CONTINUE;
 }

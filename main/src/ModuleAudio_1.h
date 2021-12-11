@@ -5,7 +5,8 @@
 #include "Globals.h"
 
 #include "SDL_mixer.h"
-#pragma comment( lib, "SDL_mixer/libx86/SDL2_mixer.lib" )
+//#pragma comment( lib, "SDL_mixer/libx86/SDL2_mixer.lib" )
+
 typedef unsigned char Uint8;
 
 class ModuleAudio1 : public Module

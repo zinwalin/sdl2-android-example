@@ -6,6 +6,7 @@
 //#include "SDL/include/SDL.h"
 
 #include "SDL.h"
+#include "SDL_ttf.h"
 
 ModuleRender::ModuleRender() : Module()
 {
@@ -31,8 +32,9 @@ bool ModuleRender::Init()
 		flags |= SDL_RENDERER_PRESENTVSYNC;
 	}
 
-	renderer = SDL_CreateRenderer(App->window->window, -1, flags);
-	
+//	renderer = SDL_CreateRenderer(App->window->window, -1, flags);
+	renderer =  SDL_CreateRenderer(App->window->window, -1, SDL_RENDERER_ACCELERATED);
+
 	if(renderer == NULL)
 	{
 		// LOG("Renderer could not be created! SDL_Error: %s\n", SDL_GetError());
@@ -63,7 +65,40 @@ update_status ModuleRender::PreUpdate()
 update_status ModuleRender::PostUpdate()
 {
 	// TODO 8: Switch buffers so we actually render
-	SDL_RenderPresent(App->render->renderer);
+
+//	// Clear window
+//    SDL_RenderClear( renderer );
+//
+//    // Display image
+//    SDL_Rect dstrect;
+//
+//	// Initialize TTF
+//	if (TTF_Init() == -1) {
+//		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "TTF_Init: %s\n", TTF_GetError());
+//		return update_status::UPDATE_ERROR;
+//	}
+//
+//	// Load font
+//	TTF_Font *font = TTF_OpenFont("blazed.ttf", 32);
+//	if (!font) {
+//		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
+//					 "Unable to load font: %s\n", TTF_GetError());
+//		return update_status::UPDATE_ERROR;
+//	}
+//
+//	dstrect.x = 0;
+//    dstrect.y = 0;
+//    dstrect.w = 450;
+//    dstrect.h = 100;
+//
+//	SDL_Color textColor = { 255, 240, 0, 255 };
+//	SDL_Surface* solid = TTF_RenderText_Solid(font, "SDL2 Android Example", textColor);
+//
+//    SDL_Texture* solidTexture = SDL_CreateTextureFromSurface(renderer, solid);
+//    SDL_RenderCopy(renderer, solidTexture, NULL, &dstrect);
+//    SDL_FreeSurface(solid);
+//	SDL_RenderPresent(App->render->renderer);
+
 	return update_status::UPDATE_CONTINUE;
 }
 
